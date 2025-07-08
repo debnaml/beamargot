@@ -7,8 +7,11 @@ import {apiVersion, dataset, projectId, studioUrl} from '@/sanity/lib/api'
 import * as resolve from '@/sanity/plugins/resolve'
 import {pageStructure, singletonPlugin} from '@/sanity/plugins/settings'
 import page from '@/sanity/schemas/documents/page'
+import post from '@/sanity/schemas/documents/post'
+import author from '@/sanity/schemas/documents/author'
 import project from '@/sanity/schemas/documents/project'
 import duration from '@/sanity/schemas/objects/duration'
+import contactMessage from '@/sanity/schemas/documents/contactMessage'
 import milestone from '@/sanity/schemas/objects/milestone'
 import timeline from '@/sanity/schemas/objects/timeline'
 import home from '@/sanity/schemas/singletons/home'
@@ -18,6 +21,9 @@ import {defineConfig} from 'sanity'
 import {unsplashImageAsset} from 'sanity-plugin-asset-source-unsplash'
 import {presentationTool} from 'sanity/presentation'
 import {structureTool} from 'sanity/structure'
+import blockContent from '@/sanity/schemas/objects/blockContent'
+import category from '@/sanity/schemas/documents/category'
+import newsletterSignup from '@/sanity/schemas/documents/newsletterSignup'
 
 const title =
   process.env.NEXT_PUBLIC_SANITY_PROJECT_TITLE || 'Next.js Personal Website with Sanity.io'
@@ -35,11 +41,16 @@ export default defineConfig({
       settings,
       // Documents
       duration,
+      contactMessage,
       page,
       project,
+      category,
+      post,
+      author,
       // Objects
       milestone,
       timeline,
+      blockContent,
     ],
   },
   plugins: [
