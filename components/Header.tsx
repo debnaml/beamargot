@@ -49,7 +49,7 @@ export default function Header() {
 
         {/* Fixed size logo (no animation, no scroll logic) */}
         <Link href="/" className="flex items-center">
-          <Logo className="h-12 w-auto" />
+          <Logo className="h-14 w-auto" />
         </Link>
 
         {/* Desktop nav */}
