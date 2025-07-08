@@ -1,4 +1,4 @@
-import {Header} from '@/components/Header'
+import {Header} from '../components/Header'
 import {OptimisticSortOrder} from '@/components/OptimisticSortOrder'
 import {ProjectListItem} from '@/components/ProjectListItem'
 import type {HomePageQueryResult} from '@/sanity.types'

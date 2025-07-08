@@ -1,7 +1,7 @@
 import './globals.css'
 import { IBM_Plex_Mono, Inter, PT_Serif } from 'next/font/google'
-import Header from '@/components/Header'
-import Footer from '@/components/Footer'
+import Header from '../components/Header'
+import Footer from '../components/Footer'
 import { Playfair_Display } from 'next/font/google'
 
 const display = Playfair_Display({
