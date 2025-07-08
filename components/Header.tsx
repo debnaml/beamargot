@@ -99,37 +99,51 @@ export default function Header() {
 
       {/* Mobile nav */}
       {mobileMenuOpen && (
-        <div className="lg:hidden mt-4 space-y-2 font-sans">
-          <Link href="/about" className="block px-4 py-2 text-gray-800 hover:bg-gray-100">
-            About
-          </Link>
-          <details className="px-4 py-2">
-            <summary className="cursor-pointer text-gray-800">Topics</summary>
-            <div className="ml-4 mt-2 space-y-1">
-              {categories.map((cat) => (
-                <Link
-                  key={cat._id}
-                  href={`/topics/${cat.slug}`}
-                  className="block text-sm text-gray-700 hover:underline"
-                  onClick={() => setMobileMenuOpen(false)}
-                >
-                  {cat.title}
-                </Link>
-              ))}
-              <Link
-                href="/topics"
-                className="block pt-2 text-sm font-medium text-blue-700 hover:underline"
-                onClick={() => setMobileMenuOpen(false)}
-              >
-                View all topics →
-              </Link>
-            </div>
-          </details>
-          <Link href="/contact" className="block px-4 py-2 text-gray-800 hover:bg-gray-100">
-            Contact
+  <div className="lg:hidden absolute top-20 left-0 w-full bg-white shadow-md border-t border-gray-200 z-40">
+    <div className="px-6 py-4 space-y-4 font-sans">
+      <Link
+        href="/about"
+        className="block text-gray-800 text-base hover:text-black"
+        onClick={() => setMobileMenuOpen(false)}
+      >
+        About
+      </Link>
+
+      <details className="group">
+        <summary className="cursor-pointer text-gray-800 text-base list-none">
+          <span className="group-open:font-semibold">Topics</span>
+        </summary>
+        <div className="ml-4 mt-2 space-y-2">
+          {categories.map((cat) => (
+            <Link
+              key={cat._id}
+              href={`/topics/${cat.slug}`}
+              className="block text-sm text-gray-700 hover:underline"
+              onClick={() => setMobileMenuOpen(false)}
+            >
+              {cat.title}
+            </Link>
+          ))}
+          <Link
+            href="/topics"
+            className="block pt-2 text-sm font-medium text-blue-700 hover:underline"
+            onClick={() => setMobileMenuOpen(false)}
+          >
+            View all topics →
           </Link>
         </div>
-      )}
+      </details>
+
+      <Link
+        href="/contact"
+        className="block text-gray-800 text-base hover:text-black"
+        onClick={() => setMobileMenuOpen(false)}
+      >
+        Contact
+      </Link>
+    </div>
+  </div>
+)}
     </header>
   )
 }
