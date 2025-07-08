@@ -18,42 +18,42 @@ export default function Footer() {
             Thoughtful essays, creative perspectives, and cultural insights, straight to your inbox every week.
           </p>
           <form
-  onSubmit={async (e) => {
-    e.preventDefault()
-    const form = e.currentTarget
-    const email = form.email.value
+          onSubmit={async (e) => {
+            e.preventDefault()
+            const form = e.currentTarget
+            const email = form.email.value
 
-    const res = await fetch('/api/newsletter', {
-      method: 'POST',
-      body: JSON.stringify({ email }),
-      headers: { 'Content-Type': 'application/json' },
-    })
+            const res = await fetch('/api/newsletter', {
+              method: 'POST',
+              body: JSON.stringify({ email }),
+              headers: { 'Content-Type': 'application/json' },
+            })
 
-    if (res.ok) {
-      form.reset()
-      alert('Thanks for subscribing!')
-    } else {
-      alert('Oops — something went wrong.')
-    }
-  }}
-  className="flex flex-col sm:flex-row sm:items-center gap-3 max-w-md mx-auto md:mx-0"
->
-  <label htmlFor="email" className="sr-only">Email</label>
-  <input
-    type="email"
-    name="email"
-    id="email"
-    placeholder="you@example.com"
-    required
-    className="w-full px-4 py-2 border border-gray-300 rounded-md text-sm"
-  />
-  <button
-    type="submit"
-    className="px-4 py-2 bg-black text-white rounded-md text-sm hover:bg-gray-800 transition"
-  >
-    Subscribe
-  </button>
-</form>
+            if (res.ok) {
+              form.reset()
+              alert('Thanks for subscribing!')
+            } else {
+              alert('Oops — something went wrong.')
+            }
+          }}
+          className="flex flex-col sm:flex-row sm:items-center gap-3 max-w-md mx-auto md:mx-0"
+        >
+          <label htmlFor="email" className="sr-only">Email</label>
+          <input
+            type="email"
+            name="email"
+            id="email"
+            placeholder="you@example.com"
+            required
+            className="w-full px-4 py-2 border border-gray-300 rounded-md text-sm"
+          />
+          <button
+            type="submit"
+            className="px-4 py-2 bg-black text-white rounded-md text-sm hover:bg-gray-800 transition"
+          >
+            Subscribe
+          </button>
+        </form>
         </div>
 
         {/* Main Footer */}
@@ -88,7 +88,6 @@ export default function Footer() {
                 <li><Link href="/about" className="hover:underline">About</Link></li>
                 <li><Link href="/contact" className="hover:underline">Contact</Link></li>
                 <li><Link href="/topics" className="hover:underline">Topics</Link></li>
-                <li><Link href="/newsletter" className="hover:underline">Newsletter</Link></li>
               </ul>
             </div>
             <div className="space-y-2">
